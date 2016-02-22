@@ -10,7 +10,7 @@ node_js:
 notifications:
   irc: "irc.freenode.org#generator-travis-ci"
 git:
-  depth: 1
+  depth: 10
 branches:
   only:
     - master
