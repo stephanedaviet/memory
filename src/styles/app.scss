@@ -4,6 +4,8 @@
 
 @import "neat";
 
+@import "font-awesome/sccs/font-awesome.scss";
+
 @include font-face('font-awesome', '../resources/fonts/font-awesome/fontawesome-webfont', normal);
 
 $card-width: 3em;

@@ -2,7 +2,9 @@
   "name": "memory",
   "version": "1.0.0",
   "description": "Un jeu de Memory",
-  "keywords": ["React"],
+  "keywords": [
+    "React"
+  ],
   "private": true,
   "main": "src/main.js",
   "scripts": {
@@ -21,6 +23,7 @@
     "es6-promise": "^3.0.2",
     "exports-loader": "^0.6.2",
     "fastclick": "^1.0.6",
+    "font-awesome": "^4.5.0",
     "history": "^1.17.0",
     "immutable": "^3.7.6",
     "imports-loader": "^0.6.5",

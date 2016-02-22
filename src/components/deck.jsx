@@ -1,5 +1,6 @@
 import autobind from "autobind-decorator";
 import classnames from "classnames";
+
 import DeckCard from "./deckCard";
 
 const cardsCount = 24;

@@ -14,6 +14,7 @@ module.exports = {
     ]
   },
   resolve: {
+    moduleDirectories: ['node_modules', 'src/components'],
     extensions: ['', '.js', '.jsx', 'es6', 'scss']
   },
   output: {
