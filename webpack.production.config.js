@@ -46,10 +46,10 @@ module.exports = {
       {
         test: /\.js|\.jsx|\.es6$/,
         exclude: /node_modules/,
-        loaders: ['babel']
+        loader: 'babel'
       }, {
         test: /\.scss|\.css$/,
-        loaders: [ 'style', 'css', 'sass' ]
+        loader: ExtractTextPlugin.extract(['css', 'sass'])
       }, {
         test: /\.png|svg$/,
         loader: 'url-loader?limit=100000'
