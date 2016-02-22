@@ -53,8 +53,8 @@ export default autobind(class DeckCard extends React.Component {
     return (
       <div onClick={this.props.onClick}
           className={classnames("card", (this.props.flipped ? "flipped" : ""), (this.props.paired ? "paired" : ""))}>
-        <div className="face" style={{color: colors[this.props.value % colors.length]}}>{symbols[this.props.value]}</div>
         <div className="backface">?</div>
+        <div className="face" style={{color: colors[this.props.value % colors.length]}}>{symbols[this.props.value]}</div>
       </div>
     )
   }

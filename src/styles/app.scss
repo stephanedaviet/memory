@@ -34,64 +34,62 @@ html, body, #app {
   .cards {
     padding: 1em;
     position: relative;
-  }
 
-  .card {
-    font-family: 'font-awesome';
-    display: inline-block;
-    position: relative;
-    margin-right: $gutter;
-    margin-bottom: $gutter;
-    cursor: pointer;
-    text-align: center;
-    width: $card-width;
-    height: golden-ratio($card-width, 1);
-    line-height: golden-ratio($card-width, 1);
+    .card {
+      font-family: 'font-awesome';
+      display: inline-block;
+      position: relative;
+      margin-right: $gutter;
+      margin-bottom: $gutter;
+      cursor: pointer;
+      text-align: center;
+      width: $card-width;
+      height: golden-ratio($card-width, 1);
+      line-height: golden-ratio($card-width, 1);
+      perspective: 800px;
+      transform-style: preserve-3d;
+      transform-origin: right center;
+      transition: transform 1s ease-out 0s;
 
-    &:nth-child(8n) {
-      margin-right: 0;
-    }
+      &:nth-child(8n) {
+        margin-right: 0;
+      }
 
-    .face, .backface {
-      font-size: 1.5em;
-      position: absolute;
-      top: 0;
-      left: 0;
-      box-sizing: border-box;
-      width: 100%;
-      height: 100%;
-      box-shadow: 0 0 0.2em 0 #222;
-      border-radius: 3px;
-      font-weight: bold;
-      @include transition(opacity 1s ease-out 0s);
-    }
-    .face {
-      visibility: hidden;
-      border: solid 3px #222;
-      color: #222;
-      background: White;
-    }
-    .backface {
-      visibility: visible;
-      border: solid 3px White;
-      color: White;
-      background: #222;
-      @include transform(rotateY(180deg));
-    }
-
-    &.flipped, &.paired {
+      .face, .backface {
+        font-size: 1.5em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 0.2em 0 #222;
+        /*border-radius: 3px;*/
+        font-weight: bold;
+        backface-visibility: hidden;
+        @include transition(opacity 1s ease-out 0s);
+      }
       .face {
-        visibility: visible;
+        border: solid 3px #222;
+        color: #222;
+        background: White;
+        transform: rotateY(180deg);
       }
       .backface {
-        visibility: hidden;
+        border: solid 3px White;
+        color: White;
+        background: #222;
       }
-    }
 
-    &.paired {
-      .face {
+      &.flipped, &.paired {
+        transform: translateX(-100%) rotateY(180deg);
         cursor: not-allowed;
-        opacity: 0.5;
+      }
+
+      &.paired {
+        .face {
+          opacity: 0.5;
+        }
       }
     }
   }
