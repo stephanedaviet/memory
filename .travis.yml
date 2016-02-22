@@ -42,8 +42,6 @@ addons:
       - libpango1.0-dev
       - libgif-dev
       - g++-4.8
-before_install:
-  - sudo npm install -g npm@latest node-gyp@latest
 install:
   - npm install
 script:
