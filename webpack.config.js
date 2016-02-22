@@ -25,8 +25,8 @@ module.exports = {
     libraryTarget: 'umd'
   },
   plugins: [
-      new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
@@ -39,7 +39,7 @@ module.exports = {
       'Immutable': 'immutable',
       'React': 'react',
       'Promise': 'es6-promise', // Thanks Aaron (https://gist.github.com/Couto/b29676dd1ab8714a818f#gistcomment-1584602)
-      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch' // À injecter uniquement dans main.js
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     })
   ],
   module: {
