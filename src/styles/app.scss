@@ -16,6 +16,7 @@ html, body, #app {
   font-family: sans-serif;
   background: #222;
 }
+
 .deck {
   width: (8 * ($card-width + $gutter)) + (2 * 1em);
   height: 100%;
