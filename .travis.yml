@@ -32,9 +32,17 @@ env:
     - GH_PROJECT_NAME: memory
     # This .travis.yml file instructs travis-ci.org to build your master branch using `yeoman build`
     # and deploy the output to your project's gh-pages branch.
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libcairo2-dev
+      - libjpeg8-dev
+      - libpango1.0-dev
+      - libgif-dev
+      - g++-4.8
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install -y libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
   - sudo npm install -g npm@latest node-gyp@latest
 install:
   - npm install
