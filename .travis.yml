@@ -32,6 +32,8 @@ env:
     - GH_PROJECT_NAME: memory
     # This .travis.yml file instructs travis-ci.org to build your master branch using `yeoman build`
     # and deploy the output to your project's gh-pages branch.
+    - CXX=g++-4.8
+sudo: false
 addons:
   apt:
     sources:
