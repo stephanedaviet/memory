@@ -32,18 +32,22 @@ env:
     - GH_PROJECT_NAME: memory
     # This .travis.yml file instructs travis-ci.org to build your master branch using `yeoman build`
     # and deploy the output to your project's gh-pages branch.
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+  - sudo npm install -g npm@latest node-gyp@latest
 install:
-    - npm install
+  - npm install
 script:
-    - npm run build
+  - npm run build
 after_success:
-    - git config user.email "stephane.daviet@serli.com"
-    - git config user.name "Stéphane Daviet"
-    - git commit -am "Deploying latest built version to gh-pages"
-    # Any command that using GH_OAUTH_TOKEN must pipe the output to /dev/null to not expose your oauth token
-    - git submodule add -b gh-pages https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} public > /dev/null 2>&1
-    - cd public
-    - if git checkout gh-pages; then git checkout -b gh-pages; fi
-    - git add -f .
-    # Any command that using GH_OAUTH_TOKEN must pipe the output to /dev/null to not expose your oauth token
-    - git push --force https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} HEAD:gh-pages > /dev/null 2>&1
+  - git config user.email "stephane.daviet@serli.com"
+  - git config user.name "Stéphane Daviet"
+  - git commit -am "Deploying latest built version to gh-pages"
+  # Any command that using GH_OAUTH_TOKEN must pipe the output to /dev/null to not expose your oauth token
+  - git submodule add -b gh-pages https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} public > /dev/null 2>&1
+  - cd public
+  - if git checkout gh-pages; then git checkout -b gh-pages; fi
+  - git add -f .
+  # Any command that using GH_OAUTH_TOKEN must pipe the output to /dev/null to not expose your oauth token
+  - git push --force https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} HEAD:gh-pages > /dev/null 2>&1
