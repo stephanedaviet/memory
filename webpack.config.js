@@ -20,7 +20,7 @@ module.exports = {
   },
   output: {
     path: __dirname + '/public/static/',
-    publicPath: '/static/',
+    publicPath: 'static/',
     filename: 'app.js',
     hot: true,
     library: 'App',
