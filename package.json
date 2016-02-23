@@ -8,7 +8,7 @@
   "private": true,
   "main": "src/main.js",
   "scripts": {
-    "lint": "eslint src tests",
+    "lint": "eslint --ext .jsx --ext .js src tests",
     "test": "export NODE_ENV=production && mocha --compilers js:babel/register,:style-and-images-compiler.js tests/index.js",
     "start": "node server.js",
     "build": "export NODE_ENV=production && npm run test && npm run lint && npm run build-singlefile",

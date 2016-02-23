@@ -53,15 +53,21 @@ module.exports = {
   },
   extends: [
     // Set of based ESLint recommended rules
-      // See http://eslint.org/docs/rules/ for details
+    // See http://eslint.org/docs/rules/ for details
     "eslint:recommended"
   ],
   rules: {
-    "no-undef": OFF,
-    "react/jsx-uses-react": WARNING
+    "no-console": WARNING,
+    "react/jsx-uses-react": WARNING,
+    // Forbid certain propTypes (any, array, object)
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
+    'react/forbid-prop-types': [0, { 'forbid': ['any', 'array', 'object'] }]
   },
   // Values of true mean the global may be modified. Values of false represent
   // constants.
   globals: {
+    "React": true,
+    "Immutable": true,
+    "_": true
   }
 };
