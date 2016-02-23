@@ -2,6 +2,7 @@ const path = require('path');
 // Useless, imported by Neat: var bourbon = require('node-bourbon').includePaths;
 // Note: I changed some var/arg names.
 const sassNeatPaths = require('node-neat').includePaths;
+const sassFontAwesomePath = __dirname + '/node_modules/font-awesome/scss';
 
 const webpack = require('webpack');
 
@@ -66,6 +67,6 @@ module.exports = {
   },
   sassLoader: {
     sourceMap: true,
-    includePaths: [path.resolve(__dirname, '/src/styles')].concat(sassNeatPaths)
+    includePaths: [path.resolve(__dirname, '/src/styles')].concat(sassNeatPaths).concat([sassFontAwesomePath])
   }
 };

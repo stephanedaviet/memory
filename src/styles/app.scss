@@ -4,9 +4,8 @@
 
 @import "neat";
 
-@import "font-awesome/sccs/font-awesome.scss";
-
-@include font-face('font-awesome', '../resources/fonts/font-awesome/fontawesome-webfont', normal);
+$fa-font-path: "../../node_modules/font-awesome/fonts";
+@import "font-awesome";
 
 $card-width: 3em;
 
