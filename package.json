@@ -12,7 +12,7 @@
     "test": "export NODE_ENV=production && mocha --compilers js:babel/register,:style-and-images-compiler.js tests/index.js",
     "start": "node server.js",
     "build": "export NODE_ENV=production && npm run test && npm run lint && npm run build-singlefile",
-    "build-singlefile": "export NODE_ENV=production && webpack -p  --colors --progress --config webpack.production.config.js"
+    "build-singlefile": "export NODE_ENV=production && webpack -p  --colors --progress --config webpack.production.config.js --bail"
   },
   "author": "Stéphane Daviet",
   "dependencies": {
