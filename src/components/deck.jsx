@@ -95,7 +95,7 @@ export default autobind(class Deck extends React.Component {
         flippedCards: Immutable.List(),
         waiting: false
       })
-    }, 1000);
+    }, 2000);
   }
 
   render() {
