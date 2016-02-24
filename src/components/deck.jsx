@@ -77,7 +77,7 @@ export default autobind(class Deck extends React.Component {
     this.setState({
       cards: this.state.cards.set(alreadyFlippedCard.order, alreadyFlippedCard).set(flippedCard.order, flippedCard),
       flippedCards: this.state.flippedCards.push(flippedCard),
-      pairedCards: this.state.pairedCards.merge(Immutable.fromJS(newPairedCards)),
+      pairedCards: this.state.pairedCards.concat(Immutable.fromJS(newPairedCards)),
       waiting: true,
       moves: this.state.moves + 1
     });
