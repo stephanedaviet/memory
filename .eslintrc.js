@@ -33,35 +33,15 @@ module.exports = {
     node: true,
     es6: true
   },
-  ecmaFeatures: {
-    arrowFunctions: true,
-    blockBinding: true,
-    classes: true,
-    defaultParams: true,
-    destructuring: true,
-    forOf: true,
-    generators: false,
-    modules: true,
-    objectLiteralComputedProperties: true,
-    objectLiteralDuplicateProperties: false,
-    objectLiteralShorthandMethods: true,
-    objectLiteralShorthandProperties: true,
-    spread: true,
-    superInFunctions: true,
-    templateStrings: true,
-    jsx: true
-  },
   extends: [
     // Set of based ESLint recommended rules
     // See http://eslint.org/docs/rules/ for details
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:react/recommended"
   ],
   rules: {
     "no-console": WARNING,
-    "react/jsx-uses-react": WARNING,
-    // Forbid certain propTypes (any, array, object)
-    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
-    'react/forbid-prop-types': [0, { 'forbid': ['any', 'array', 'object'] }]
+    "react/prop-types": WARNING
   },
   // Values of true mean the global may be modified. Values of false represent
   // constants.
