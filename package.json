@@ -11,8 +11,8 @@
     "lint": "eslint --ext .jsx --ext .js src tests",
     "test": "cross-env NODE_ENV=production && mocha --compilers js:babel-register,:tools/style-and-images-compiler.js tests/index.js",
     "start": "babel-node tools/runTask serve",
-    "build": "cross-env NODE_ENV=production && npm run test && npm run lint && npm run build-singlefile",
-    "build-singlefile": "cross-env NODE_ENV=production && babel-node tools/runTask clean && babel-node tools/runTask copyResources && babel-node tools/runTask bundle"
+    "build": "cross-env NODE_ENV=production npm run test && cross-env NODE_ENV=production npm run lint && cross-env NODE_ENV=production npm run build-singlefile",
+    "build-singlefile": "cross-env NODE_ENV=production babel-node tools/runTask clean && cross-env NODE_ENV=production babel-node tools/runTask copyResources && cross-env NODE_ENV=production babel-node tools/runTask bundle"
   },
   "author": "Stéphane Daviet",
   "dependencies": {

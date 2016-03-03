@@ -30,7 +30,7 @@ const loaders = {
   },
   cssAsExternalFileLoader: {
     test: extensionMatchRegEx('css', 'scss'),
-    loaders: ExtractTextPlugin.extract(['css', 'sass'])
+    loader: ExtractTextPlugin.extract(['css', 'sass'])
   },
   graphicalResourcesLoader: {
     test: extensionMatchRegEx('png', 'svg', 'jpg', 'jpeg', 'gif', 'ttf', 'eot', 'woff', 'woff2'),
