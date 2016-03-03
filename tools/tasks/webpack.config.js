@@ -72,7 +72,7 @@ const commonConfig = {
 };
 
 const developmentConfig = extend(true, {}, commonConfig, {
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   entry: {
     'app': [
       'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
@@ -101,6 +101,7 @@ const developmentConfig = extend(true, {}, commonConfig, {
 });
 
 const productionConfig = extend(true, {}, commonConfig, {
+  devtool: 'source-map',
   entry: {
     'app': [
       appEntryPoint
