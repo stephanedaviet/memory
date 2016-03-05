@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import './styles/app.scss';
-import App from './components/app';
+import Deck from './components/deck';
 
 export function init() {
   // Needed for onTouchTap
@@ -15,5 +15,5 @@ export function init() {
   // https://github.com/zilverline/react-tap-event-plugin
   injectTapEventPlugin();
 
-  ReactDOM.render(<App />, document.getElementById('app'));
+  ReactDOM.render(<Deck />, document.getElementById('app'));
 }
