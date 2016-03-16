@@ -30,7 +30,7 @@ const loaders = {
   },
   cssAsExternalFileLoader: {
     test: extensionMatchRegEx('css', 'scss'),
-    loader: ExtractTextPlugin.extract(['css', 'sass'])
+    loader: ExtractTextPlugin.extract(['css', 'sass'], { publicPath: './' })
   },
   graphicalResourcesLoader: {
     test: extensionMatchRegEx('png', 'svg', 'jpg', 'jpeg', 'gif', 'ttf', 'eot', 'woff', 'woff2'),
@@ -117,8 +117,7 @@ const productionConfig = extend(true, {}, commonConfig, {
       }
     }),
     new ExtractTextPlugin('app.css', {
-      allChunks: true,
-      publicPath: '../'
+      allChunks: true
     })
   ],
   module: {
