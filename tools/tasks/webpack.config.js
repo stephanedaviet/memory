@@ -117,7 +117,8 @@ const productionConfig = extend(true, {}, commonConfig, {
       }
     }),
     new ExtractTextPlugin('app.css', {
-      allChunks: true
+      allChunks: true,
+      publicPath: '../'
     })
   ],
   module: {
